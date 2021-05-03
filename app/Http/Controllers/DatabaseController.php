@@ -25,8 +25,8 @@ class DatabaseController extends \Illuminate\Routing\Controller
             ]));
         }
         if (!$decryptionData = openssl_decrypt(base64_decode($encryptionData),
-            'AES-128-CBC', config('services.encrypt_secret'),
-            OPENSSL_RAW_DATA, config('services.encrypt_iv'))
+            'AES-128-CBC', config('services.encrypt.secret'),
+            OPENSSL_RAW_DATA, config('services.encrypt.iv'))
         ) {
             return JsonResponse::fromJsonString(json_encode([
                 'code' => 500,

@@ -30,4 +30,8 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'encrypt' => [
+        'secret' => env('ENCRYPT_SECRET'),
+        'iv' => env('ENCRYPT_IV'),
+    ]
 ];
